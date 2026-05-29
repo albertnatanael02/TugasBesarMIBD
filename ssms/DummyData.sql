@@ -16,6 +16,8 @@ VALUES
 select *
 from users
 
-UPDATE users
-SET password = '12345'
-WHERE email = 'budi@gmail.com';
+INSERT INTO users (nama, email, password)
+VALUES
+('Admin', 'admin@gmail.com', '12345'),
+('Guru', 'guru@gmail.com', '12345'),
+('Murid', 'murid@gmail.com', '12345');
