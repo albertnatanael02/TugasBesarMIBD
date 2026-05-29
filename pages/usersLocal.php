@@ -24,18 +24,35 @@ if ($query === false) {
 <h1>Data Users</h1>
 
 <table border="1" cellpadding="10">
+
     <tr>
         <th>ID</th>
         <th>Nama</th>
         <th>Email</th>
+        <th>Aksi</th>
     </tr>
 
     <?php while($row = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC)) { ?>
+
         <tr>
+
             <td><?= $row['id']; ?></td>
             <td><?= $row['nama']; ?></td>
             <td><?= $row['email']; ?></td>
+
+            <td>
+
+                <a href="../crud/hapus_user.php?id=<?= $row['id']; ?>"
+                   onclick="return confirm('Yakin ingin menghapus user ini?')">
+
+                    Hapus
+
+                </a>
+
+            </td>
+
         </tr>
+
     <?php } ?>
 
 </table>
