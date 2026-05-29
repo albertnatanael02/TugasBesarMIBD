@@ -15,3 +15,7 @@ VALUES
 
 select *
 from users
+
+UPDATE users
+SET password = '12345'
+WHERE email = 'budi@gmail.com';
